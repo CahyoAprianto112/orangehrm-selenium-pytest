@@ -1,0 +1,42 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+
+# pytest reports
+reports/
+
+# ===== Virtual Environment =====
+venv/
+.env
+.env.*
+
+# ===== Pytest =====
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+report.html
+
+# ===== Selenium =====
+screenshots/
+downloads/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.iml
+
+# ===== Logs =====
+logs/
+*.log
+
+# ===== Build =====
+dist/
+build/

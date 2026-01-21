@@ -1,0 +1,5 @@
+selenium
+pytest
+black
+isort
+autopep8
