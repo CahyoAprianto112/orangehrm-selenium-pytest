@@ -138,7 +138,6 @@ pytest tests/test_pim.py::test_edit_employee -s
 
 ```bash
 git clone https://github.com/CahyoAprianto112/orangehrm-selenium-pytest.git
-cd orangeHRM
 ```
 
 ### 2️⃣ Buat & Aktifkan Virtual Environment
