@@ -137,7 +137,7 @@ pytest tests/test_pim.py::test_edit_employee -s
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone <URL_REPOSITORY>
+git clone https://github.com/CahyoAprianto112/orangehrm-selenium-pytest.git
 cd orangeHRM
 ```
 
