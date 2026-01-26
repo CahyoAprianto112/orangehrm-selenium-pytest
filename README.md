@@ -1,24 +1,58 @@
 # 📌 AUTOMATION TEST SCENARIO — ORANGE HRM
 
+Dokumen ini menyesuaikan **test scenario** dengan implementasi aktual di file `tests/test_pim.py`.
+
 ---
 
 ## 📌 FEATURE: LOGIN
 
-> Login digunakan sebagai **fixture** (`@pytest.fixture`) dan menjadi precondition untuk seluruh test PIM.
+> Login digunakan sebagai **fixture** (`@pytest.fixture`) untuk seluruh test PIM, **dan juga diuji secara langsung** pada file `test_login.py` (positive & negative case).
 
-### ✅ SCENARIO 1 — Login dengan data valid
+### 🟢 SMOKE TEST
+
+#### ✅ SCENARIO 1 — Login dengan data valid
 
 * **Precondition:** User berada di halaman login
 * **Given** user membuka halaman login
 * **When** user mengisi username dan password valid
 * **Then** user berhasil login dan masuk ke dashboard
-* **Digunakan di:** Semua test PIM (`login` fixture)
+* **Automation Test:** `test_login_success`
 * **Test Data:**
 
-  * Username: `cymera`
+  * Username: `Admin`
   * Password: `admin123`
 
-> ❌ Negative scenario login (password salah / field kosong) **belum di-cover** di automation test.
+---
+
+### 🟡 REGRESSION TEST
+
+#### ❌ SCENARIO 2 — Login dengan password salah
+
+* **Precondition:** User berada di halaman login
+* **Given** user membuka halaman login
+* **When** user mengisi username valid dan password salah
+* **Then** muncul error "Invalid credentials"
+* **Automation Test:** `test_login_invalid_password`
+
+---
+
+#### ❌ SCENARIO 3 — Login dengan username kosong
+
+* **Precondition:** User berada di halaman login
+* **Given** user membuka halaman login
+* **When** user mengosongkan username dan klik Login
+* **Then** muncul validasi "Required"
+* **Automation Test:** `test_login_empty_username`
+
+---
+
+#### ❌ SCENARIO 4 — Login dengan username & password kosong
+
+* **Precondition:** User berada di halaman login
+* **Given** user membuka halaman login
+* **When** semua field dikosongkan lalu klik Login
+* **Then** muncul validasi "Required"
+* **Automation Test:** `test_login_empty_username_and_password`
 
 ---
 
@@ -137,7 +171,8 @@ pytest tests/test_pim.py::test_edit_employee -s
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/CahyoAprianto112/orangehrm-selenium-pytest.git
+git clone <URL_REPOSITORY>
+cd orangeHRM
 ```
 
 ### 2️⃣ Buat & Aktifkan Virtual Environment
