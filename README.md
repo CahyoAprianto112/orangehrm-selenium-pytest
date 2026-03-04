@@ -181,7 +181,7 @@ cd orangeHRM
 
 ```bash
 python -m venv venv
-venv\Scripts\activate
+source venv/Scripts/activate
 ```
 
 **Mac / Linux:**
